@@ -1,0 +1,16 @@
+环境配置
+#java：java-11(将在2024-9-30被jenkins弃用，届时转至java-17）
+#maven：3.8.1 https://maven.apache.org/download.cgi
+#testNG：6.14.3 
+#selenium：3.141.59 建议使用3的版本
+
+#jenkins：https://www.jenkins.io/download/  --下载war包
+##jenkins插件：
+
+浏览器、浏览器驱动
+#google，google会强制更新为最新版，所以对应版本的驱动在一般稳定版是找不到的
+#chromeDriver：https://googlechromelabs.github.io/chrome-for-testing/
+##放到路径 C:\Program Files\Google\Chrome\Application 
+##为路径配置系统环境变量
+##验证：chromedriver -version
+
