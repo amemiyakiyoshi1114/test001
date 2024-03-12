@@ -11,10 +11,11 @@ import java.time.Duration;
 import static org.testng.AssertJUnit.assertEquals;
 
 public class UsingSeleniumTest {
+    WebDriver driver = new ChromeDriver();
 
-    @Test
-    public void eightComponents() {
-        WebDriver driver = new ChromeDriver();
+    @Test(description = "step1, sendkeys and click button")
+    public void sendkeysClick() {
+
         driver.get("https://www.selenium.dev/selenium/web/web-form.html");
 
         String title = driver.getTitle();
@@ -28,9 +29,16 @@ public class UsingSeleniumTest {
         textBox.sendKeys("Selenium");
         submitButton.click();
 
+    }
+
+    @Test(description = "step2, assert and std out result",dependsOnMethods = "sendkeysClick")
+    public void assertStdout(){
         WebElement message = driver.findElement(By.id("message"));
         String value = message.getText();
         assertEquals("Received!", value);
+        System.out.println("----------------------------------------------------");
+        System.out.println("result: " + value);
+        System.out.println("----------------------------------------------------");
 
         driver.quit();
     }
